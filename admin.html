@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin ULT - Pendaftaran Wisuda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+    .fade-in { animation: fadeIn 0.3s ease-in-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<body class="text-slate-800 h-screen flex overflow-hidden">
+
+  <aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col z-20">
+    <div class="h-16 flex items-center px-6 border-b border-slate-200 bg-blue-900 text-white">
+      <span class="font-extrabold tracking-wider text-lg">ULT ADMIN</span>
+    </div>
+    <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
+      <a href="#" class="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+        <svg class="w-5 h-5 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        Dashboard
+      </a>
+      <a href="#" class="flex items-center px-3 py-2.5 text-sm font-bold text-blue-900 bg-blue-50 rounded-lg transition-colors">
+        <svg class="w-5 h-5 mr-3 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        Pendaftaran Wisuda
+      </a>
+      <a href="#" class="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg hover:bg-slate-50 transition-colors">
+        <svg class="w-5 h-5 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        Pengaturan Wisuda
+      </a>
+    </nav>
+    <div class="p-4 border-t border-slate-200">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-full bg-blue-200 text-blue-900 font-bold flex items-center justify-center text-xs">A1</div>
+        <div>
+          <p class="text-xs font-bold">Admin 1</p>
+          <p class="text-[10px] text-slate-500">Verifikator Pusat</p>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 flex flex-col h-full overflow-hidden relative">
+    
+    <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 z-10 shrink-0">
+      <h1 class="text-lg font-bold text-slate-800">Manajemen Pendaftaran Wisuda</h1>
+      <div class="text-sm text-slate-500 font-medium">Periode Aktif: <span class="text-blue-700 font-bold">Genap 2025/2026</span></div>
+    </header>
+
+    <div class="flex-1 overflow-y-auto p-6 relative">
+      
+      <div id="view-index" class="fade-in max-w-7xl mx-auto space-y-6">
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm">
+            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Masuk</p>
+            <p class="text-2xl font-bold text-slate-800 mt-1">1,420</p>
+          </div>
+          <div class="bg-purple-50 rounded-xl border border-purple-100 p-4 shadow-sm">
+            <p class="text-xs font-semibold text-purple-700 uppercase tracking-wider">Antre Plotting (Daftar)</p>
+            <p class="text-2xl font-bold text-purple-900 mt-1" id="stat-daftar">12</p>
+          </div>
+          <div class="bg-amber-50 rounded-xl border border-amber-100 p-4 shadow-sm">
+            <p class="text-xs font-semibold text-amber-700 uppercase tracking-wider">Sedang Diperiksa</p>
+            <p class="text-2xl font-bold text-amber-900 mt-1" id="stat-diperiksa">45</p>
+          </div>
+          <div class="bg-green-50 rounded-xl border border-green-100 p-4 shadow-sm">
+            <p class="text-xs font-semibold text-green-700 uppercase tracking-wider">Sukses Verifikasi</p>
+            <p class="text-2xl font-bold text-green-900 mt-1">1,350</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-slate-50/50">
+            <h2 class="font-bold text-slate-800">Daftar Pengajuan Masuk</h2>
+            <div class="flex space-x-2">
+              <input type="text" placeholder="Cari NIM / Nama..." class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm focus:ring-2 focus:ring-blue-900 outline-none w-64">
+              <button class="bg-slate-100 text-slate-600 border border-slate-300 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-200">Filter</button>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm whitespace-nowrap">
+              <thead class="bg-slate-50 border-b border-slate-200 text-slate-500 font-semibold text-xs uppercase tracking-wider">
+                <tr>
+                  <th class="px-4 py-3">Tgl Submit</th>
+                  <th class="px-4 py-3">NIM / Nama Lengkap</th>
+                  <th class="px-4 py-3">Program Studi</th>
+                  <th class="px-4 py-3">Status</th>
+                  <th class="px-4 py-3">Plotting Verifikator</th>
+                  <th class="px-4 py-3 text-center">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700" id="table-body">
+                
+                <tr class="hover:bg-slate-50 transition-colors" id="row-1">
+                  <td class="px-4 py-3 text-xs text-slate-500">10 Jun 2026<br>14:45 WIB</td>
+                  <td class="px-4 py-3">
+                    <span class="font-bold block text-slate-900">41521110026</span>
+                    <span class="text-xs text-slate-500">Hibban Rafa Misbah</span>
+                  </td>
+                  <td class="px-4 py-3 text-xs">Teknik Informatika</td>
+                  <td class="px-4 py-3">
+                    <span id="badge-1" class="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">DAFTAR</span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <select id="plot-1" onchange="handlePlotting(1)" class="border border-slate-300 bg-white rounded-md text-xs px-2 py-1.5 focus:ring-2 focus:ring-blue-500 outline-none w-32 font-medium">
+                      <option value="">- Belum Diplot -</option>
+                      <option value="Admin 1">Admin 1</option>
+                      <option value="Admin 2">Admin 2</option>
+                      <option value="Admin 3">Admin 3</option>
+                    </select>
+                  </td>
+                  <td class="px-4 py-3 text-center">
+                    <button id="btn-verif-1" onclick="openVerification('41521110026', 'Hibban Rafa Misbah', 'Teknik Informatika')" disabled class="bg-slate-200 text-slate-400 cursor-not-allowed font-semibold text-xs px-4 py-1.5 rounded-lg transition-all">Verifikasi</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-slate-50 transition-colors" id="row-2">
+                  <td class="px-4 py-3 text-xs text-slate-500">09 Jun 2026<br>10:15 WIB</td>
+                  <td class="px-4 py-3">
+                    <span class="font-bold block text-slate-900">43221120012</span>
+                    <span class="text-xs text-slate-500">Prili Rasella</span>
+                  </td>
+                  <td class="px-4 py-3 text-xs">Akuntansi</td>
+                  <td class="px-4 py-3">
+                    <span id="badge-2" class="bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">DIPERIKSA</span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <select id="plot-2" class="border border-transparent bg-slate-100 rounded-md text-xs px-2 py-1.5 font-bold text-slate-700 w-32 appearance-none" disabled>
+                      <option value="Admin 1" selected>Admin 1</option>
+                    </select>
+                  </td>
+                  <td class="px-4 py-3 text-center">
+                    <button id="btn-verif-2" onclick="openVerification('43221120012', 'Prili Rasella', 'Akuntansi')" class="bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20 text-white font-semibold text-xs px-4 py-1.5 rounded-lg transition-all">Verifikasi</button>
+                  </td>
+                </tr>
+
+                 <tr class="hover:bg-slate-50 transition-colors" id="row-3">
+                  <td class="px-4 py-3 text-xs text-slate-500">09 Jun 2026<br>16:20 WIB</td>
+                  <td class="px-4 py-3">
+                    <span class="font-bold block text-slate-900">42321010083</span>
+                    <span class="text-xs text-slate-500">Azka Fisyah Faza Althaf</span>
+                  </td>
+                  <td class="px-4 py-3 text-xs">Desain Komunikasi Visual</td>
+                  <td class="px-4 py-3">
+                    <span id="badge-3" class="bg-purple-100 text-purple-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">DAFTAR</span>
+                  </td>
+                  <td class="px-4 py-3">
+                    <select id="plot-3" onchange="handlePlotting(3)" class="border border-slate-300 bg-white rounded-md text-xs px-2 py-1.5 focus:ring-2 focus:ring-blue-500 outline-none w-32 font-medium">
+                      <option value="">- Belum Diplot -</option>
+                      <option value="Admin 1">Admin 1</option>
+                      <option value="Admin 2">Admin 2</option>
+                    </select>
+                  </td>
+                  <td class="px-4 py-3 text-center">
+                    <button id="btn-verif-3" disabled class="bg-slate-200 text-slate-400 cursor-not-allowed font-semibold text-xs px-4 py-1.5 rounded-lg transition-all">Verifikasi</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between">
+            <span class="text-xs text-slate-500">Menampilkan 3 dari 1,420 data</span>
+            <div class="flex space-x-1">
+              <button class="px-3 py-1 border border-slate-300 rounded bg-white text-xs text-slate-400 cursor-not-allowed">Prev</button>
+              <button class="px-3 py-1 border border-slate-300 rounded bg-blue-900 text-white text-xs font-medium">1</button>
+              <button class="px-3 py-1 border border-slate-300 rounded bg-white text-xs hover:bg-slate-100">2</button>
+              <button class="px-3 py-1 border border-slate-300 rounded bg-white text-xs hover:bg-slate-100">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="view-verifikasi" class="hidden fade-in max-w-5xl mx-auto space-y-6 pb-20">
+        
+        <div class="flex items-center space-x-4 border-b border-slate-200 pb-4">
+          <button onclick="backToIndex()" class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 text-slate-600 transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+          </button>
+          <div>
+            <h2 class="text-xl font-bold text-slate-800 flex items-center">
+              Verifikasi Pendaftaran
+              <span class="ml-3 bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">DIPERIKSA</span>
+            </h2>
+            <p class="text-sm text-slate-500 mt-0.5" id="v-nama-nim">Prili Rasella (43221120012) - Akuntansi</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <div class="lg:col-span-2 space-y-4">
+            <h3 class="font-bold text-slate-800 border-b border-slate-200 pb-2">Pemeriksaan Berkas Persyaratan</h3>
+            
+            <div class="bg-white border border-slate-200 rounded-xl divide-y divide-slate-100 shadow-sm" id="dokumen-list">
+              
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors hover:bg-slate-50/50">
+                <div class="flex items-start space-x-3">
+                  <div class="p-2 bg-blue-50 text-blue-700 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                  <div>
+                    <p class="text-sm font-bold text-slate-800">1. Bukti Bayar Wisuda</p>
+                    <button class="text-xs text-blue-600 font-medium hover:underline mt-0.5 flex items-center">Lihat Dokumen <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
+                  </div>
+                </div>
+                <div class="flex bg-slate-100 rounded-lg p-1 w-max shrink-0">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-bayar" value="Benar" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-green-500 peer-checked:text-white transition-all">Benar</div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-bayar" value="Salah" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-red-500 peer-checked:text-white transition-all">Salah</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors hover:bg-slate-50/50">
+                <div class="flex items-start space-x-3">
+                  <div class="p-2 bg-blue-50 text-blue-700 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                  <div>
+                    <p class="text-sm font-bold text-slate-800">2. Sertifikat UMBCAN</p>
+                    <button class="text-xs text-blue-600 font-medium hover:underline mt-0.5 flex items-center">Lihat Dokumen <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
+                  </div>
+                </div>
+                <div class="flex bg-slate-100 rounded-lg p-1 w-max shrink-0">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-umbcan" value="Benar" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-green-500 peer-checked:text-white transition-all">Benar</div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-umbcan" value="Salah" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-red-500 peer-checked:text-white transition-all">Salah</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors hover:bg-slate-50/50">
+                <div class="flex items-start space-x-3">
+                  <div class="p-2 bg-blue-50 text-blue-700 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                  <div>
+                    <p class="text-sm font-bold text-slate-800">3. Bukti Penyerahan TA Perpustakaan</p>
+                    <button class="text-xs text-blue-600 font-medium hover:underline mt-0.5 flex items-center">Lihat Dokumen <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
+                  </div>
+                </div>
+                <div class="flex bg-slate-100 rounded-lg p-1 w-max shrink-0">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-ta" value="Benar" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-green-500 peer-checked:text-white transition-all">Benar</div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-ta" value="Salah" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-red-500 peer-checked:text-white transition-all">Salah</div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors hover:bg-slate-50/50">
+                <div class="flex items-start space-x-3">
+                  <div class="p-2 bg-blue-50 text-blue-700 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                  <div>
+                    <p class="text-sm font-bold text-slate-800 flex items-center">
+                      4. Pasfoto Ijazah 
+                      <span class="ml-2 group relative cursor-help">
+                        <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="hidden group-hover:block absolute bottom-full left-0 w-64 bg-slate-800 text-white text-[10px] p-2 rounded shadow-lg z-10 mb-1">
+                          Latar biru (RGB 16 52 166). Jas/Blazer hitam. Tidak pakai kacamata. Bukan hasil edit AI.
+                        </span>
+                      </span>
+                    </p>
+                    <button class="text-xs text-blue-600 font-medium hover:underline mt-0.5 flex items-center">Lihat Dokumen <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
+                  </div>
+                </div>
+                <div class="flex bg-slate-100 rounded-lg p-1 w-max shrink-0">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-foto" value="Benar" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-green-500 peer-checked:text-white transition-all">Benar</div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-foto" value="Salah" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-red-500 peer-checked:text-white transition-all">Salah</div>
+                  </label>
+                </div>
+              </div>
+
+               <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-colors hover:bg-slate-50/50">
+                <div class="flex items-start space-x-3">
+                  <div class="p-2 bg-blue-50 text-blue-700 rounded-lg"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg></div>
+                  <div>
+                    <p class="text-sm font-bold text-slate-800">5. Kartu Tanda Penduduk (KTP)</p>
+                    <button class="text-xs text-blue-600 font-medium hover:underline mt-0.5 flex items-center">Lihat Dokumen <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></button>
+                  </div>
+                </div>
+                <div class="flex bg-slate-100 rounded-lg p-1 w-max shrink-0">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-ktp" value="Benar" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-green-500 peer-checked:text-white transition-all">Benar</div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="doc-ktp" value="Salah" class="peer sr-only" onchange="evaluasiCatatan()">
+                    <div class="px-4 py-1.5 text-xs font-bold rounded-md text-slate-500 peer-checked:bg-red-500 peer-checked:text-white transition-all">Salah</div>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="font-bold text-slate-800 border-b border-slate-200 pb-2">Eksekusi Verifikasi</h3>
+            
+            <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+              <div class="space-y-4">
+                
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Catatan Verifikator</label>
+                  <textarea id="catatan-teks" rows="4" class="w-full border border-slate-200 bg-slate-50 rounded-lg p-3 text-sm focus:ring-2 focus:ring-blue-900 outline-none transition-all resize-none" placeholder="Pilih hasil verifikasi di samping untuk mengisi catatan otomatis..."></textarea>
+                  <p class="text-[10px] text-slate-400 mt-1">Catatan ini akan tampil di riwayat mahasiswa.</p>
+                </div>
+
+                <div id="batas-revisi-container" class="hidden opacity-0 transition-opacity duration-300">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Batas Waktu Revisi <span class="text-red-500">*</span></label>
+                  <input type="date" id="tgl-revisi" onchange="updateCatatanTanggal()" class="w-full border border-slate-200 bg-white rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-900 outline-none">
+                </div>
+
+                <hr class="border-slate-100">
+
+                <div class="flex flex-col space-y-2 pt-2">
+                  <button type="button" id="btn-tolak" onclick="submitVerifikasi('DITOLAK')" disabled class="w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed">
+                    Tolak & Minta Perbaikan
+                  </button>
+                  <button type="button" id="btn-sukses" onclick="submitVerifikasi('SUKSES')" disabled class="w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed flex items-center justify-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Setujui & Terbitkan No. Urut
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            
+            <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 text-xs">
+              <p class="font-bold text-blue-900 mb-2">Atribut Wisuda Pendaftar:</p>
+              <ul class="space-y-1 text-slate-600 font-medium">
+                <li>• Ukuran Baju Toga: <span class="text-slate-900 font-bold">M</span></li>
+                <li>• Kebutuhan Kursi Roda: <span class="text-slate-900 font-bold">Tidak</span></li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // --- FUNGSI HALAMAN INDEX & PLOTTING ---
+    
+    function handlePlotting(rowId) {
+      const select = document.getElementById(`plot-${rowId}`);
+      const btn = document.getElementById(`btn-verif-${rowId}`);
+      const badge = document.getElementById(`badge-${rowId}`);
+      const tr = document.getElementById(`row-${rowId}`);
+      
+      if (select.value !== "") {
+        // Simulasi perubahan status dari DAFTAR -> DIPERIKSA
+        badge.className = "bg-amber-100 text-amber-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider transition-all";
+        badge.textContent = "DIPERIKSA";
+        
+        // Aktifkan Tombol Verifikasi
+        btn.disabled = false;
+        btn.className = "bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20 text-white font-semibold text-xs px-4 py-1.5 rounded-lg transition-all";
+        
+        // Kunci Dropdown menjadi style fixed seperti Row 2
+        select.className = "border border-transparent bg-slate-100 rounded-md text-xs px-2 py-1.5 font-bold text-slate-700 w-32 appearance-none";
+        select.disabled = true;
+
+        // Animasi Highlight Sederhana
+        tr.classList.add('bg-amber-50/30');
+        setTimeout(() => tr.classList.remove('bg-amber-50/30'), 1500);
+
+        // Update Counter Statistik
+        document.getElementById('stat-daftar').textContent = parseInt(document.getElementById('stat-daftar').textContent) - 1;
+        document.getElementById('stat-diperiksa').textContent = parseInt(document.getElementById('stat-diperiksa').textContent) + 1;
+      }
+    }
+
+    function openVerification(nim, nama, prodi) {
+      // Set Header
+      document.getElementById('v-nama-nim').textContent = `${nama} (${nim}) - ${prodi}`;
+      
+      // Reset Form Verifikasi
+      document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      document.getElementById('catatan-teks').value = "";
+      document.getElementById('batas-revisi-container').classList.add('hidden', 'opacity-0');
+      
+      const btnTolak = document.getElementById('btn-tolak');
+      const btnSukses = document.getElementById('btn-sukses');
+      btnTolak.className = "w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed";
+      btnTolak.disabled = true;
+      btnSukses.className = "w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed flex items-center justify-center";
+      btnSukses.disabled = true;
+
+      // Switch View
+      document.getElementById('view-index').classList.add('hidden');
+      document.getElementById('view-verifikasi').classList.remove('hidden');
+    }
+
+    function backToIndex() {
+      document.getElementById('view-verifikasi').classList.add('hidden');
+      document.getElementById('view-index').classList.remove('hidden');
+    }
+
+
+    // --- FUNGSI HALAMAN VERIFIKASI ---
+    
+    // Konfigurasi Nama Asli Berkas
+    const mapBerkas = {
+      'doc-bayar': 'Bukti Bayar Wisuda',
+      'doc-umbcan': 'Sertifikat UMBCAN',
+      'doc-ta': 'Bukti Penyerahan TA',
+      'doc-foto': 'Pasfoto Ijazah',
+      'doc-ktp': 'KTP'
+    };
+
+    let arraySalah = [];
+    
+    function evaluasiCatatan() {
+      const rBayar = document.querySelector('input[name="doc-bayar"]:checked');
+      const rUmbcan = document.querySelector('input[name="doc-umbcan"]:checked');
+      const rTa = document.querySelector('input[name="doc-ta"]:checked');
+      const rFoto = document.querySelector('input[name="doc-foto"]:checked');
+      const rKtp = document.querySelector('input[name="doc-ktp"]:checked');
+      
+      const catatan = document.getElementById('catatan-teks');
+      const containerRevisi = document.getElementById('batas-revisi-container');
+      const btnTolak = document.getElementById('btn-tolak');
+      const btnSukses = document.getElementById('btn-sukses');
+
+      // Cek apakah semua sudah dipilih
+      if(rBayar && rUmbcan && rTa && rFoto && rKtp) {
+        
+        arraySalah = [];
+        if(rBayar.value === 'Salah') arraySalah.push(mapBerkas['doc-bayar']);
+        if(rUmbcan.value === 'Salah') arraySalah.push(mapBerkas['doc-umbcan']);
+        if(rTa.value === 'Salah') arraySalah.push(mapBerkas['doc-ta']);
+        if(rFoto.value === 'Salah') arraySalah.push(mapBerkas['doc-foto']);
+        if(rKtp.value === 'Salah') arraySalah.push(mapBerkas['doc-ktp']);
+
+        if(arraySalah.length === 0) {
+          // JIKA SEMUA BENAR (SUKSES)
+          catatan.value = "Lengkap";
+          catatan.className = "w-full border border-green-300 bg-green-50 text-green-900 rounded-lg p-3 text-sm focus:ring-2 focus:ring-green-600 outline-none transition-all resize-none font-medium";
+          
+          containerRevisi.classList.add('hidden', 'opacity-0');
+          
+          btnSukses.disabled = false;
+          btnSukses.className = "w-full bg-green-600 hover:bg-green-700 shadow-md shadow-green-600/20 text-white font-bold text-sm px-4 py-2.5 rounded-lg transition-all flex items-center justify-center";
+          
+          btnTolak.disabled = true;
+          btnTolak.className = "w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed";
+
+        } else {
+          // JIKA ADA YANG SALAH (DITOLAK)
+          updateCatatanTanggal(); // panggil untuk set teks awal
+          catatan.className = "w-full border border-red-300 bg-red-50 text-red-900 rounded-lg p-3 text-sm focus:ring-2 focus:ring-red-600 outline-none transition-all resize-none font-medium";
+          
+          containerRevisi.classList.remove('hidden');
+          setTimeout(() => containerRevisi.classList.remove('opacity-0'), 10);
+          
+          btnTolak.disabled = false;
+          btnTolak.className = "w-full bg-red-600 hover:bg-red-700 shadow-md shadow-red-600/20 text-white font-bold text-sm px-4 py-2.5 rounded-lg transition-all";
+          
+          btnSukses.disabled = true;
+          btnSukses.className = "w-full bg-slate-100 text-slate-400 font-bold text-sm px-4 py-2.5 rounded-lg transition-all cursor-not-allowed flex items-center justify-center";
+        }
+      }
+    }
+
+    // Dynamic Text Update based on Date input
+    function updateCatatanTanggal() {
+      const tgl = document.getElementById('tgl-revisi').value;
+      const tglFormat = tgl ? new Date(tgl).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '[DD/MM/YYYY]';
+      const rincian = arraySalah.join(', ');
+      
+      document.getElementById('catatan-teks').value = `Harap perbaiki berkas (${rincian}) paling lambat tanggal ${tglFormat} agar pendaftaran wisuda dapat disetujui pada periode ini.`;
+    }
+
+    function submitVerifikasi(status) {
+      if(status === 'DITOLAK') {
+        const tgl = document.getElementById('tgl-revisi').value;
+        if(!tgl) { alert('Harap isi Batas Waktu Revisi terlebih dahulu!'); return; }
+        alert(`Status pendaftaran dikembalikan ke mahasiswa (DITOLAK) untuk direvisi.\nCatatan: ${document.getElementById('catatan-teks').value}`);
+      } else {
+        alert('Verifikasi Berhasil (SUKSES)! Nomor Urut Wisuda untuk mahasiswa ini telah digenerate oleh sistem secara otomatis.');
+      }
+      
+      // Kembali ke Index
+      backToIndex();
+    }
+  </script>
+</body>
+</html>

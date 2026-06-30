@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ULT Mercu Buana - Pendaftaran Wisuda</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-blue-900 text-white p-2 rounded-lg font-bold text-lg tracking-wider shadow-md shadow-blue-900/20">
+          ULT
+        </div>
+        <div>
+          <span class="text-xs text-slate-400 block font-medium uppercase tracking-wider">Universitas Mercu Buana</span>
+          <span class="text-sm font-bold text-slate-800 -mt-1 block">Layanan Terpadu Digital</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="text-right hidden sm:block">
+          <p class="text-xs font-semibold text-slate-800">Ahmad Fauzi</p>
+          <p class="text-[10px] text-slate-400 font-medium">41522010023 — Informatika</p>
+        </div>
+        <div class="h-9 w-9 rounded-full bg-blue-100 border border-blue-200 text-blue-900 font-bold flex items-center justify-center text-sm">
+          AF
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-5xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+    
+    <div id="view-index" class="fade-in space-y-6">
+      <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl shadow-blue-900/10 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+        <span class="text-xs font-bold uppercase tracking-widest bg-blue-800/50 px-3 py-1 rounded-full text-blue-200 border border-blue-700/50">Menu Akademik</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight">Portal Pendaftaran Wisuda</h1>
+        <p class="text-blue-100/80 text-sm max-w-xl mt-2 font-medium">Selamat datang! Sebelum melakukan pendaftaran, sistem akan memverifikasi kelayakan status akademik dan finansial Anda secara otomatis.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+        <h2 class="text-base font-bold text-slate-900 mb-5 flex items-center">
+          <svg class="w-5 h-5 mr-2 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Pengecekan Status Prasyarat Mahasiswa
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-slate-100 rounded-xl p-4 bg-slate-50/50 flex items-start space-x-3">
+            <div class="p-2 rounded-lg bg-green-100 text-green-700 mt-0.5 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-800">Status Kelulusan di SIA</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Sistem mendeteksi Anda telah dinyatakan **LULUS** pada Yudisium Periode Terakhir.</p>
+            </div>
+          </div>
+
+          <div class="border border-slate-100 rounded-xl p-4 bg-slate-50/50 flex items-start space-x-3">
+            <div class="p-2 rounded-lg bg-green-100 text-green-700 mt-0.5 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-800">Tugas Akhir / Skripsi</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Berkas fisik dan digital Tugas Akhir telah diserahkan dan divalidasi oleh pihak Perpustakaan UMB.</p>
+            </div>
+          </div>
+
+          <div class="border border-slate-100 rounded-xl p-4 bg-slate-50/50 flex items-start space-x-3">
+            <div class="p-2 rounded-lg bg-green-100 text-green-700 mt-0.5 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-slate-800">Tagihan Keuangan & Wisuda</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Seluruh kewajiban pembayaran perkuliahan dan biaya wisuda terdeteksi lunas sesuai pengumuman.</p>
+            </div>
+          </div>
+
+          <div class="border border-amber-100 rounded-xl p-4 bg-amber-50/40 flex items-start space-x-3">
+            <div class="p-2 rounded-lg bg-amber-100 text-amber-700 mt-0.5 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-bold text-amber-800 flex items-center">
+                Peringatan Sistem Akademik
+                <span class="ml-2 bg-amber-200 text-amber-900 text-[9px] font-extrabold uppercase px-1.5 py-0.5 rounded">Bukan Cegatan</span>
+              </h3>
+              <p class="text-xs text-amber-700/90 mt-0.5">Terdapat catatan pengembalian buku perpustakaan yang terlambat, namun status ini **tidak memblokir** proses pendaftaran wisuda Anda.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs font-medium text-slate-500 text-center sm:text-left">Semua kriteria utama terpenuhi. Silakan klik tombol di samping untuk mengisi formulir pendaftaran.</p>
+          <button type="button" onclick="switchToFormView()" class="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md shadow-blue-950/10 hover:shadow-lg transition-all flex items-center justify-center space-x-2 group">
+            <span>Isi Formulir Pendaftaran</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="view-form" class="hidden fade-in space-y-6">
+      
+      <div class="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm mb-6">
+        <div class="flex items-center justify-between relative max-w-xl mx-auto">
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-0.5 bg-slate-100 z-0"></div>
+          <div class="absolute left-0 top-1/2 transform -translate-y-1/2 h-0.5 bg-blue-900 z-0 transition-all duration-300" id="form-progress-line" style="width: 0%;"></div>
+          
+          <div class="relative z-10 flex flex-col items-center step-dot" data-step="1">
+            <div class="w-8 h-8 rounded-full border-2 bg-blue-900 text-white border-blue-900 text-xs font-bold flex items-center justify-center transition-all shadow-sm">1</div>
+            <span class="text-[10px] sm:text-xs font-bold text-blue-900 mt-2">Atribut Wisuda</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center step-dot" data-step="2">
+            <div class="w-8 h-8 rounded-full border-2 bg-white text-slate-400 border-slate-200 text-xs font-bold flex items-center justify-center transition-all">2</div>
+            <span class="text-[10px] sm:text-xs font-medium text-slate-400 mt-2">Upload Berkas</span>
+          </div>
+          <div class="relative z-10 flex flex-col items-center step-dot" data-step="3">
+            <div class="w-8 h-8 rounded-full border-2 bg-white text-slate-400 border-slate-200 text-xs font-bold flex items-center justify-center transition-all">3</div>
+            <span class="text-[10px] sm:text-xs font-medium text-slate-400 mt-2">Konfirmasi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <form id="form-wisuda" onsubmit="return false;" class="p-6 sm:p-8">
+          
+          <div id="form-step-1" class="space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+              <h2 class="text-lg font-bold text-slate-900">Pengisian Data & Atribut Wisuda</h2>
+              <p class="text-xs text-slate-500 mt-0.5">Silakan isi data kebutuhan wisuda Anda secara lengkap dan benar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Periode Wisuda <span class="text-red-500">*</span></label>
+                <select id="inp-periode" required class="w-full border border-slate-200 bg-slate-50/50 rounded-xl px-4 py-3 text-sm focus:bg-white focus:ring-2 focus:ring-blue-900/10 focus:border-blue-900 outline-none transition-all font-medium">
+                  <option value="">-- Pilih Periode Wisuda --</option>
+                  <option value="Angkatan 44 - Tahun 2026">Angkatan 44 - Tahun 2026</option>
+                  <option value="Angkatan 45 - Tahun 2026">Angkatan 45 - Tahun 2026</option>
+                </select>
+                <p class="text-red-500 text-[11px] mt-1 hidden field-error">Periode wisuda wajib dipilih.</p>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Ukuran Toga <span class="text-red-500">*</span></label>
+                <select id="inp-toga" required class="w-full border border-slate-200 bg-slate-50/50 rounded-xl px-4 py-3 text-sm focus:bg-white focus:ring-2 focus:ring-blue-900/10 focus:border-blue-900 outline-none transition-all font-medium">
+                  <option value="">-- Pilih Ukuran Toga --</option>
+                  <option value="S">S (Small)</option>
+                  <option value="M">M (Medium)</option>
+                  <option value="L">L (Large)</option>
+                  <option value="XL">XL (Extra Large)</option>
+                  <option value="XXL">XXL (Double Extra Large)</option>
+                </select>
+                <p class="text-red-500 text-[11px] mt-1 hidden field-error">Ukuran baju toga wajib dipilih.</p>
+              </div>
+
+              <div class="md:col-span-2 bg-slate-50/50 border border-slate-100 rounded-xl p-4">
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Kebutuhan Kursi Roda? <span class="text-red-500">*</span></label>
+                <p class="text-[11px] text-slate-400 mb-3">Informasi ini ditujukan untuk penataan layout posisi duduk aksesibel saat prosesi wisuda.</p>
+                <div class="flex space-x-6">
+                  <label class="flex items-center cursor-pointer select-none text-sm font-semibold text-slate-700">
+                    <input type="radio" name="inp-kursi" value="Ya" class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-blue-900/20">
+                    <span class="ml-2">Ya, Memerlukan Akses Kursi Roda</span>
+                  </label>
+                  <label class="flex items-center cursor-pointer select-none text-sm font-semibold text-slate-700">
+                    <input type="radio" name="inp-kursi" value="Tidak" checked class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-blue-900/20">
+                    <span class="ml-2">Tidak</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex justify-between">
+              <button type="button" onclick="switchToIndexView()" class="border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm px-5 py-2.5 rounded-xl transition-all">Kembali</button>
+              <button type="button" onclick="handleStepNext(1)" class="bg-blue-900 hover:bg-blue-950 text-white font-semibold text-sm px-6 py-2.5 rounded-xl shadow-md shadow-blue-950/5 transition-all">Lanjutkan</button>
+            </div>
+          </div>
+
+          <div id="form-step-2" class="hidden space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+              <h2 class="text-lg font-bold text-slate-900">Unggah Berkas Persyaratan</h2>
+              <div class="bg-slate-50 border border-slate-200 rounded-lg p-3 text-slate-600 text-xs font-medium space-y-1 mt-2">
+                <p class="font-bold text-slate-800">⚠️ Aturan Unggah Dokumen:</p>
+                <p>• Format dokumen yang diizinkan hanya **PDF / JPEG**</p>
+                <p>• Batas ukuran maksimal file adalah **5 MB**</p>
+                <p>• Mengunggah berkas baru pada slot yang sama otomatis akan **mengganti (overwrite)** berkas lama.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              
+              <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-700 block">1. Bukti Bayar Wisuda <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50/30 relative group">
+                  <input type="file" id="file-bayar" required accept=".pdf,.jpeg,.jpg" onchange="updateFileStatus(this, 'status-bayar')" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+                  <p class="text-xs font-semibold text-slate-700 group-hover:text-blue-900 transition-colors" id="status-bayar">Pilih atau Seret Berkas Anda</p>
+                  <p class="text-[10px] text-slate-400 mt-0.5">PDF/JPEG up to 5MB</p>
+                </div>
+                <p class="text-red-500 text-[11px] hidden field-error">File bukti bayar wajib diunggah.</p>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-700 block">2. Sertifikat UMBCAN <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50/30 relative group">
+                  <input type="file" id="file-umbcan" required accept=".pdf,.jpeg,.jpg" onchange="updateFileStatus(this, 'status-umbcan')" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+                  <p class="text-xs font-semibold text-slate-700 group-hover:text-blue-900 transition-colors" id="status-umbcan">Pilih atau Seret Berkas Anda</p>
+                  <p class="text-[10px] text-slate-400 mt-0.5">PDF/JPEG up to 5MB</p>
+                </div>
+                <p class="text-red-500 text-[11px] hidden field-error">File sertifikat UMBCAN wajib diunggah.</p>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-700 block">3. Bukti Penyerahan TA Perpustakaan <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50/30 relative group">
+                  <input type="file" id="file-ta" required accept=".pdf,.jpeg,.jpg" onchange="updateFileStatus(this, 'status-ta')" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+                  <p class="text-xs font-semibold text-slate-700 group-hover:text-blue-900 transition-colors" id="status-ta">Pilih atau Seret Berkas Anda</p>
+                  <p class="text-[10px] text-slate-400 mt-0.5">PDF/JPEG up to 5MB</p>
+                </div>
+                <p class="text-red-500 text-[11px] hidden field-error">File bukti penyerahan TA wajib diunggah.</p>
+              </div>
+
+              <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-700 block">4. Pasfoto <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50/30 relative group">
+                  <input type="file" id="file-foto" required accept=".pdf,.jpeg,.jpg" onchange="updateFileStatus(this, 'status-foto')" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+                  <p class="text-xs font-semibold text-slate-700 group-hover:text-blue-900 transition-colors" id="status-foto">Pilih atau Seret Berkas Anda</p>
+                  <p class="text-[10px] text-slate-400 mt-0.5">PDF/JPEG up to 5MB</p>
+                </div>
+                <p class="text-red-500 text-[11px] hidden field-error">File pasfoto wajib diunggah.</p>
+              </div>
+
+              <div class="space-y-1 md:col-span-2">
+                <label class="text-xs font-bold uppercase tracking-wider text-slate-700 block">5. Kartu Tanda Penduduk (KTP) <span class="text-red-500">*</span></label>
+                <div class="border-2 border-dashed border-slate-200 hover:border-blue-900 rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-50/30 relative group">
+                  <input type="file" id="file-ktp" required accept=".pdf,.jpeg,.jpg" onchange="updateFileStatus(this, 'status-ktp')" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer">
+                  <p class="text-xs font-semibold text-slate-700 group-hover:text-blue-900 transition-colors" id="status-ktp">Pilih atau Seret Berkas Anda</p>
+                  <p class="text-[10px] text-slate-400 mt-0.5">PDF/JPEG up to 5MB</p>
+                </div>
+                <p class="text-red-500 text-[11px] hidden field-error">File KTP wajib diunggah.</p>
+              </div>
+
+            </div>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex justify-between">
+              <button type="button" onclick="handleStepBack(2)" class="border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm px-5 py-2.5 rounded-xl transition-all">Sebelumnya</button>
+              <button type="button" onclick="handleStepNext(2)" class="bg-blue-900 hover:bg-blue-950 text-white font-semibold text-sm px-6 py-2.5 rounded-xl shadow-md shadow-blue-950/5 transition-all">Lanjutkan</button>
+            </div>
+          </div>
+
+          <div id="form-step-3" class="hidden space-y-6">
+            <div class="border-b border-slate-100 pb-3">
+              <h2 class="text-lg font-bold text-slate-900">Finalisasi & Konfirmasi Data</h2>
+              <p class="text-xs text-slate-500 mt-0.5">Harap periksa kembali semua data sebelum menekan tombol Kirim.</p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 space-y-3">
+              <div class="grid grid-cols-3 text-xs sm:text-sm">
+                <span class="text-slate-400 font-medium">Periode Wisuda</span>
+                <span class="col-span-2 text-slate-800 font-bold" id="lbl-review-periode">-</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs sm:text-sm pt-2 border-t border-slate-200/50">
+                <span class="text-slate-400 font-medium">Ukuran Toga</span>
+                <span class="col-span-2 text-slate-800 font-bold" id="lbl-review-toga">-</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs sm:text-sm pt-2 border-t border-slate-200/50">
+                <span class="text-slate-400 font-medium">Butuh Kursi Roda</span>
+                <span class="col-span-2 text-slate-800 font-bold" id="lbl-review-kursi">-</span>
+              </div>
+              <div class="grid grid-cols-3 text-xs sm:text-sm pt-2 border-t border-slate-200/50">
+                <span class="text-slate-400 font-medium">Dokumen Persyaratan</span>
+                <span class="col-span-2 text-green-700 font-bold flex items-center">
+                  <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  5 File Siap Diunggah
+                </span>
+              </div>
+            </div>
+
+            <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-4 flex items-start space-x-3">
+              <input type="checkbox" id="chk-pernyataan" required class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-blue-900/20 mt-1 cursor-pointer">
+              <label for="chk-pernyataan" class="text-xs font-medium text-slate-600 select-none cursor-pointer">
+                Saya menyatakan dengan sadar bahwa semua berkas dan data beratribut wisuda yang saya lampirkan adalah valid dan asli. Saya memahami bahwa data yang telah dikirim **tidak dapat diubah kembali**.
+              </label>
+            </div>
+            <p class="text-red-500 text-[11px] hidden -mt-4 pl-7" id="error-pernyataan">Anda wajib menyetujui lembar pernyataan untuk mengirim.</p>
+
+            <div class="mt-8 pt-5 border-t border-slate-100 flex justify-between">
+              <button type="button" id="btn-final-back" onclick="handleStepBack(3)" class="border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-sm px-5 py-2.5 rounded-xl transition-all">Sebelumnya</button>
+              <button type="button" onclick="submitPendaftaran()" id="btn-submit" class="bg-green-600 hover:bg-green-700 text-white font-bold text-sm px-8 py-2.5 rounded-xl shadow-md shadow-green-700/10 transition-all flex items-center justify-center space-x-2">
+                <span>KIRIM PENDAFTARAN</span>
+                <div id="loader" class="hidden w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+
+    <div id="view-success" class="hidden fade-in max-w-md mx-auto text-center space-y-6 py-10">
+      <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto shadow-md">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+
+      <div class="space-y-2">
+        <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Sukses Mengunggah Berkas!</h1>
+        <p class="text-sm text-slate-500 px-4">Berkas persyaratan pendaftaran wisuda Anda telah aman disimpan ke dalam basis data ULT.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm text-left divide-y divide-slate-100">
+        <div class="pb-3 flex justify-between items-center">
+          <span class="text-xs font-medium text-slate-400">Status Sistem saat ini</span>
+          <span class="bg-purple-100 text-purple-800 text-[11px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">DAFTAR</span>
+        </div>
+        <div class="py-3 flex justify-between items-center">
+          <span class="text-xs font-medium text-slate-400">ID Pengajuan</span>
+          <span class="text-sm font-mono font-bold text-slate-800">REG-WSD-2026-0091</span>
+        </div>
+        <div class="pt-3 flex justify-between items-center">
+          <span class="text-xs font-medium text-slate-400">Tanggal Kirim</span>
+          <span class="text-xs font-semibold text-slate-700">10 Juni 2026, 14:45 WIB</span>
+        </div>
+      </div>
+
+      <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 text-xs font-semibold text-blue-900/90 text-center">
+        💡 Silakan cek status pengajuan Anda secara berkala dalam 3 hari kerja.
+      </div>
+
+      <div>
+        <button type="button" onclick="window.location.reload()" class="text-xs font-bold text-slate-500 hover:text-blue-900 underline transition-all">Kembali ke Halaman Utama</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center text-[11px] font-medium text-slate-400">
+      &copy; 2026 Biro Teknologi Informasi — Universitas Mercu Buana. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // View Switchers
+    function switchToFormView() {
+      document.getElementById('view-index').classList.add('hidden');
+      document.getElementById('view-form').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function switchToIndexView() {
+      document.getElementById('view-form').classList.add('hidden');
+      document.getElementById('view-index').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    // Wizard Flow Controllers
+    function handleStepNext(currentStep) {
+      if (currentStep === 1) {
+        const pSelect = document.getElementById('inp-periode');
+        const tSelect = document.getElementById('inp-toga');
+        let valid = true;
+
+        if (!pSelect.value) {
+          pSelect.nextElementSibling.classList.remove('hidden');
+          valid = false;
+        } else { pSelect.nextElementSibling.classList.add('hidden'); }
+
+        if (!tSelect.value) {
+          tSelect.nextElementSibling.classList.remove('hidden');
+          valid = false;
+        } else { tSelect.nextElementSibling.classList.add('hidden'); }
+
+        if (valid) {
+          document.getElementById('form-step-1').classList.add('hidden');
+          document.getElementById('form-step-2').classList.remove('hidden');
+          updateProgressBar(2);
+        }
+      } 
+      else if (currentStep === 2) {
+        const files = ['file-bayar', 'file-umbcan', 'file-ta', 'file-foto', 'file-ktp'];
+        let valid = true;
+
+        files.forEach(id => {
+          const input = document.getElementById(id);
+          const errorNode = input.parentElement.nextElementSibling;
+          if (!input.files || input.files.length === 0) {
+            errorNode.classList.remove('hidden');
+            valid = false;
+          } else {
+            errorNode.classList.add('hidden');
+          }
+        });
+
+        if (valid) {
+          // Prepare Confirmation Review Data
+          document.getElementById('lbl-review-periode').textContent = document.getElementById('inp-periode').value;
+          document.getElementById('lbl-review-toga').textContent = document.getElementById('inp-toga').value;
+          document.getElementById('lbl-review-kursi').textContent = document.querySelector('input[name="inp-kursi"]:checked').value;
+
+          document.getElementById('form-step-2').classList.add('hidden');
+          document.getElementById('form-step-3').classList.remove('hidden');
+          updateProgressBar(3);
+        }
+      }
+    }
+
+    function handleStepBack(currentStep) {
+      if (currentStep === 2) {
+        document.getElementById('form-step-2').classList.add('hidden');
+        document.getElementById('form-step-1').classList.remove('hidden');
+        updateProgressBar(1);
+      } else if (currentStep === 3) {
+        document.getElementById('form-step-3').classList.add('hidden');
+        document.getElementById('form-step-2').classList.remove('hidden');
+        updateProgressBar(2);
+      }
+    }
+
+    function updateProgressBar(targetStep) {
+      const bar = document.getElementById('form-progress-line');
+      const dots = document.querySelectorAll('.step-dot');
+      
+      if(targetStep === 1) bar.style.width = '0%';
+      if(targetStep === 2) bar.style.width = '50%';
+      if(targetStep === 3) bar.style.width = '100%';
+
+      dots.forEach(dot => {
+        const stepNum = parseInt(dot.getAttribute('data-step'));
+        const circle = dot.firstElementChild;
+        const text = dot.lastElementChild;
+
+        if (stepNum < targetStep) {
+          circle.className = "w-8 h-8 rounded-full border-2 bg-emerald-600 text-white border-emerald-600 text-xs font-bold flex items-center justify-center transition-all";
+          circle.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>`;
+          text.className = "text-[10px] sm:text-xs font-bold text-emerald-600 mt-2";
+        } else if (stepNum === targetStep) {
+          circle.className = "w-8 h-8 rounded-full border-2 bg-blue-900 text-white border-blue-900 text-xs font-bold flex items-center justify-center transition-all";
+          circle.innerHTML = stepNum;
+          text.className = "text-[10px] sm:text-xs font-bold text-blue-900 mt-2";
+        } else {
+          circle.className = "w-8 h-8 rounded-full border-2 bg-white text-slate-400 border-slate-200 text-xs font-bold flex items-center justify-center transition-all";
+          circle.innerHTML = stepNum;
+          text.className = "text-[10px] sm:text-xs font-medium text-slate-400 mt-2";
+        }
+      });
+    }
+
+    // File Input Visual State Manager (Mengakomodasi Aturan Overwrite Berkas)
+    function updateFileStatus(input, textId) {
+      const label = document.getElementById(textId);
+      if (input.files && input.files.length > 0) {
+        const file = input.files[0];
+        
+        // Cek batasan ukuran 5MB
+        if (file.size > 5 * 1024 * 1024) {
+          alert('Batas ukuran berkas maksimal 5 MB!');
+          input.value = '';
+          label.textContent = "Pilih atau Seret Berkas Anda";
+          label.parentElement.className = "border-2 border-dashed border-red-300 rounded-xl p-4 text-center cursor-pointer bg-red-50/30 relative group";
+          return;
+        }
+
+        label.textContent = `✅ Berkas terpilih: ${file.name}`;
+        label.parentElement.className = "border-2 border-solid border-emerald-500 rounded-xl p-4 text-center cursor-pointer bg-emerald-50/20 relative group";
+        input.parentElement.nextElementSibling.classList.add('hidden');
+      }
+    }
+
+    // Submit Action Final
+    function submitPendaftaran() {
+      const chk = document.getElementById('chk-pernyataan');
+      const errChk = document.getElementById('error-pernyataan');
+      
+      if (!chk.checked) {
+        errChk.classList.remove('hidden');
+        return;
+      } else {
+        errChk.classList.add('hidden');
+      }
+
+      // Action Processing Loader
+      const btn = document.getElementById('btn-submit');
+      const backBtn = document.getElementById('btn-final-back');
+      const loader = document.getElementById('loader');
+
+      btn.disabled = true;
+      backBtn.disabled = true;
+      btn.className = "bg-green-700/60 text-white font-bold text-sm px-8 py-2.5 rounded-xl cursor-not-allowed flex items-center justify-center space-x-2";
+      loader.classList.remove('hidden');
+
+      // Simulasi delay penyimpanan system status -> DAFTAR (2 detik)
+      setTimeout(() => {
+        document.getElementById('view-form').classList.add('hidden');
+        document.getElementById('view-success').classList.remove('hidden');
+        window.scrollTo(0, 0);
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
